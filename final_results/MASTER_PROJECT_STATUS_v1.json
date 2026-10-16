@@ -1,0 +1,154 @@
+{
+  "status": "EXPERIMENTAL_RESULTS_COMPLETE_READY_FOR_CONSOLIDATION",
+  "project": "Underwater Acoustic ML/AI Classification",
+  "expected_lock_count": 16,
+  "verified_lock_count": 16,
+  "all_expected_locks_present": true,
+  "all_expected_locks_valid_json": true,
+  "known_frozen_hashes_verified": true,
+  "dataset_and_experiment_status": {
+    "Qiandao": {
+      "status": "COMPLETE_AND_FROZEN",
+      "components": [
+        "SpeedBoat",
+        "UUV",
+        "NoiseTarget"
+      ],
+      "note": "Final experimental result locks are present for all three components."
+    },
+    "DeepShip": {
+      "status": "COMPLETE_AND_FROZEN",
+      "models": [
+        "Model A - MFCC + RBF-SVM",
+        "Model B - LogMel CNN",
+        "Model C - Acoustic Fusion"
+      ],
+      "comparison_lock_present": true
+    },
+    "ShipsEar": {
+      "status": "COMPLETE_AND_FROZEN",
+      "five_class_acoustic_characterization": "COMPLETE",
+      "full_five_class_source_heldout_ml": "NOT_SCIENTIFICALLY_SUPPORTED",
+      "restricted_three_class_exploratory_ml": "COMPLETE",
+      "restricted_classes": [
+        "class_0",
+        "class_1",
+        "class_3"
+      ]
+    },
+    "DS3500": {
+      "status": "COMPLETE_AND_FROZEN",
+      "scientific_role": "RESEARCH_ONLY_PAIRED_WITH_SHIPSEAR",
+      "independent_dataset_claim_allowed": false,
+      "independent_ml_benchmark_allowed": false
+    }
+  },
+  "scientific_constraints": [
+    "Dataset independence and provenance-group structure must be preserved in final reporting.",
+    "ShipsEar restricted three-class results must not be presented as a full five-class ShipsEar classifier.",
+    "DS3500 must not be counted as an independent second dataset for generalization claims.",
+    "No post-test model retuning should be introduced into frozen experiments.",
+    "Mono datasets cannot support true spatial beamforming or DOA claims."
+  ],
+  "next_stage": "FINAL_REPORT_DASHBOARD_AND_PRESENTATION_CONSOLIDATION",
+  "lock_inventory_csv": "C:\\Users\\Supreme Traders\\Desktop\\Underwater_Acoustic_ML_Datasets\\final_results\\MASTER_PROJECT_LOCK_INVENTORY_v1.csv",
+  "lock_inventory_sha256": "afa4e82ee3edd615b9f8e616cc7eaa4da2f9a879ac78783bc3a3f001c9851f3c",
+  "locks": {
+    "DeepShip_ABC_Comparison": {
+      "relative_path": "DeepShip_ABC_Comparison_v1\\DEEPSHIP_ABC_COMPARISON_LOCK_v1.json",
+      "sha256": "e6128340bda34f41e2f8d66f28e2225d56d79ed6f08f3fcdcd14c933575af606",
+      "hash_check": "PASS",
+      "top_level_status": "DEEPSHIP_ABC_COMPARISON_FROZEN"
+    },
+    "DeepShip_ModelA": {
+      "relative_path": "DeepShip_ModelA_MFCC_SVM_v1\\DEEPSHIP_MODELA_FINAL_RESULT_LOCK_v1.json",
+      "sha256": "5c8df02bfb37293d227544718d77736b17f6368ea7a3dd2e36c265df9086caea",
+      "hash_check": "PASS",
+      "top_level_status": "DEEPSHIP_MODELA_OUTER_OOF_FINALIZED"
+    },
+    "DeepShip_ModelB": {
+      "relative_path": "DeepShip_ModelB_LogMel_CNN_v1\\DEEPSHIP_MODELB_FINAL_RESULT_LOCK_v1.json",
+      "sha256": "7cf38ae2deb7495fb45f5cba666d1a25fd38f54ea338b711aff936937e1418eb",
+      "hash_check": "PASS",
+      "top_level_status": "DEEPSHIP_MODELB_OUTER_OOF_FINALIZED"
+    },
+    "DeepShip_ModelC": {
+      "relative_path": "DeepShip_ModelC_AcousticFusion_v1\\DEEPSHIP_MODELC_FINAL_RESULT_LOCK_v1.json",
+      "sha256": "59548b38cf9d55db8c86d30f0268ab02a0319caec41a45f051de24b407c30d50",
+      "hash_check": "PASS",
+      "top_level_status": "DEEPSHIP_MODELC_OUTER_OOF_FINALIZED"
+    },
+    "DS3500_Final_Status": {
+      "relative_path": "DS3500_FINAL_STATUS_LOCK_v1.json",
+      "sha256": "f35ea0d05100a81c5a4f8987a53a4df149bcb11bd5ca709053d93391e3dd0215",
+      "hash_check": "PASS",
+      "top_level_status": "DS3500_COMPLETE_AND_FROZEN"
+    },
+    "NoiseTarget_Final_TwoFold": {
+      "relative_path": "NoiseTarget_ABC_FinalTwoFold\\FINAL_TWO_FOLD_RESULT_LOCK_v1.json",
+      "sha256": "b94fbb6709f3d49c2937d883ce0c5b2a11386a78d557ec85a8becde8912a9365",
+      "hash_check": "RECORDED_NO_PRIOR_HASH",
+      "top_level_status": "NOISE_TARGET_TWO_FOLD_OOF_FINALIZED"
+    },
+    "NoiseTarget_Fold1": {
+      "relative_path": "NoiseTarget_Fold1_ABC_OuterTest\\FOLD1_OUTER_TEST_RESULT_LOCK_v1.json",
+      "sha256": "5725a4c5b921e180134cfc1c882b1d46ecbed6dc1183ca8088e4857ff659e67f",
+      "hash_check": "RECORDED_NO_PRIOR_HASH",
+      "top_level_status": "FOLD1_OUTER_TEST_EVALUATED_AND_LOCKED"
+    },
+    "NoiseTarget_Fold2": {
+      "relative_path": "NoiseTarget_Fold2_ABC_OuterTest\\FOLD2_OUTER_TEST_RESULT_LOCK_v1.json",
+      "sha256": "d89df0fb78b694c2b5357a66de10aac8ac4f40a78dedc38e88774211f1a273e8",
+      "hash_check": "RECORDED_NO_PRIOR_HASH",
+      "top_level_status": "FOLD2_OUTER_TEST_EVALUATED_AND_LOCKED"
+    },
+    "ShipsEar_Acoustic_Characterization": {
+      "relative_path": "ShipsEar_Acoustic_Characterization_v1\\SHIPSEAR_ACOUSTIC_CHARACTERIZATION_LOCK_v1.json",
+      "sha256": "0076eabbeea1560d44aaa943b18d2c554718245a02d2ba40e796e6a904be6881",
+      "hash_check": "PASS",
+      "top_level_status": "SHIPSEAR_5CLASS_ACOUSTIC_CHARACTERIZATION_COMPLETE"
+    },
+    "ShipsEar_Scientific_Scope": {
+      "relative_path": "ShipsEar_Acoustic_Characterization_v1\\SHIPSEAR_SCIENTIFIC_SCOPE_LOCK_v1.json",
+      "sha256": "2973adb3d488c3dee572c8211b176e6c32f4fa13052b12350887b1e7f4162b6c",
+      "hash_check": "PASS",
+      "top_level_status": "SHIPSEAR_SCOPE_FROZEN"
+    },
+    "ShipsEar_DS3500_Relationship": {
+      "relative_path": "ShipsEar_DS3500_Relationship_Audit_v1\\SHIPSEAR_DS3500_RELATIONSHIP_AUDIT_LOCK_v1.json",
+      "sha256": "c8173d5bcfbab97761c96fa12e6ef6050d2c7299c0837ba37368ef16719f1355",
+      "hash_check": "PASS",
+      "top_level_status": "SHIPSEAR_DS3500_RELATIONSHIP_AUDIT_FROZEN"
+    },
+    "ShipsEar_Final_Status": {
+      "relative_path": "SHIPSEAR_FINAL_STATUS_LOCK_v1.json",
+      "sha256": "056ff149b2c5f23d28de4eda61875462af6d56b3bbefe9a5b4b4a71a632846dd",
+      "hash_check": "PASS",
+      "top_level_status": "SHIPSEAR_COMPLETE_AND_FROZEN"
+    },
+    "ShipsEar_Restricted3_AcousticSVM": {
+      "relative_path": "ShipsEar_Restricted3_ML_v1\\AcousticSVM_v1\\SHIPSEAR_RESTRICTED3_ACOUSTIC_SVM_FINAL_LOCK_v1.json",
+      "sha256": "34b471f38563b30201c3f618f954657579b834713756bc259bab86c4e8049918",
+      "hash_check": "PASS",
+      "top_level_status": "SHIPSEAR_RESTRICTED3_ACOUSTIC_SVM_COMPLETE"
+    },
+    "ShipsEar_Restricted3_Protocol": {
+      "relative_path": "ShipsEar_Restricted3_ML_v1\\SHIPSEAR_RESTRICTED3_PROTOCOL_LOCK_v1.json",
+      "sha256": "ede216f88d7965b639e9f25f75555c75fa3c817525108ca5e08663fe32afd32f",
+      "hash_check": "PASS",
+      "top_level_status": "SHIPSEAR_RESTRICTED3_PROTOCOL_FROZEN"
+    },
+    "SpeedBoat_Final": {
+      "relative_path": "SpeedBoat_ABC_FinalTest\\FINAL_TEST_LOCK.json",
+      "sha256": "86c1bd5fe431a1b749ac0743595a57f774e671485ed56207f3fd77a2cd8b372a",
+      "hash_check": "RECORDED_NO_PRIOR_HASH",
+      "top_level_status": "FINAL_TEST_COMPLETED"
+    },
+    "UUV_Final": {
+      "relative_path": "UUV_ABC_FinalTest\\FINAL_TEST_LOCK.json",
+      "sha256": "76cb715ccce18365766988c4bbfd61a12bb9c8bc46436bbd4c9e64460fc78384",
+      "hash_check": "RECORDED_NO_PRIOR_HASH",
+      "top_level_status": "FINAL_TEST_COMPLETED"
+    }
+  }
+}

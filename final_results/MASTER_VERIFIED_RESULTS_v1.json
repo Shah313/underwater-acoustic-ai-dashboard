@@ -1,0 +1,277 @@
+{
+  "status": "MASTER_VERIFIED_RESULTS_v1_FROZEN",
+  "purpose": "Single source of truth for the final supervisor dashboard, technical report and presentation.",
+  "project": "Underwater Acoustic Contact Classification using ML/AI",
+  "reporting_rule": "Dashboard, report and presentation must use values from this verified results file or its frozen sources.",
+  "results": {
+    "SpeedBoat": {
+      "project_family": "QiandaoEar22",
+      "task": "QiandaoEar22 SpeedBoat target vs other",
+      "evaluation_design": "Frozen final-test evaluation after model selection",
+      "test_samples": 1588,
+      "test_other": 553,
+      "test_target": 1035,
+      "models_frozen_before_test": true,
+      "models": {
+        "A": {
+          "model": "Model A - MFCC + SVM",
+          "accuracy": 0.7273299748110831,
+          "balanced_accuracy": 0.6998707096120415,
+          "macro_f1": 0.6997864549291537,
+          "macro_precision": 0.6997028818021214,
+          "other_recall": 0.6094032549728752,
+          "target_recall": 0.7903381642512077
+        },
+        "B": {
+          "model": "Model B - Log-Mel CNN",
+          "accuracy": 0.6605793450881612,
+          "balanced_accuracy": 0.6650846065815796,
+          "macro_f1": 0.6482762729938136,
+          "macro_precision": 0.6506249003666507,
+          "other_recall": 0.6799276672694394,
+          "target_recall": 0.6502415458937199
+        },
+        "C": {
+          "model": "Model C - Log-Mel CNN + Acoustic Fusion",
+          "accuracy": 0.6845088161209067,
+          "balanced_accuracy": 0.6750207476129325,
+          "macro_f1": 0.6658764219679907,
+          "macro_precision": 0.6635547283176594,
+          "other_recall": 0.64376130198915,
+          "target_recall": 0.706280193236715
+        }
+      },
+      "winner": "Model A - MFCC + SVM",
+      "winner_macro_f1": 0.6997864549291537,
+      "scientific_status": "FINAL_TEST_COMPLETE_AND_FROZEN",
+      "reporting_note": "Final-test results must not be used for further tuning of the same SpeedBoat experiment."
+    },
+    "UUV": {
+      "project_family": "QiandaoEar22",
+      "task": "QiandaoEar22 UUV target vs other",
+      "evaluation_design": "Frozen final-test evaluation after Models A/B/C were frozen",
+      "test_samples": 436,
+      "test_other": 300,
+      "test_target": 136,
+      "test_source_components": 18,
+      "models_frozen_before_test": true,
+      "models": {
+        "A": {
+          "model": "Model A - MFCC + SVM",
+          "accuracy": 0.8669724770642202,
+          "balanced_accuracy": 0.8209313725490196,
+          "macro_f1": 0.8365901571546732,
+          "macro_precision": 0.8608355379188712,
+          "other_recall": 0.9433333333333334,
+          "target_recall": 0.6985294117647058
+        },
+        "B": {
+          "model": "Model B - Log-Mel CNN",
+          "accuracy": 0.8623853211009175,
+          "balanced_accuracy": 0.8035294117647058,
+          "macro_f1": 0.8257115446114487,
+          "macro_precision": 0.8685714285714285,
+          "other_recall": 0.96,
+          "target_recall": 0.6470588235294118
+        },
+        "C": {
+          "model": "Model C - Log-Mel CNN + Acoustic Fusion",
+          "accuracy": 0.8302752293577982,
+          "balanced_accuracy": 0.7500490196078431,
+          "macro_f1": 0.7750697155605131,
+          "macro_precision": 0.8450351731601732,
+          "other_recall": 0.9633333333333334,
+          "target_recall": 0.5367647058823529
+        }
+      },
+      "winner": "Model A - MFCC + SVM",
+      "winner_macro_f1": 0.8365901571546732,
+      "scientific_status": "FINAL_TEST_COMPLETE_AND_FROZEN",
+      "reporting_note": "Final-test results must not be used for further tuning of the same UUV experiment."
+    },
+    "NoiseTarget": {
+      "project_family": "QiandaoEar22",
+      "task": "QiandaoEar22 Noise Target target-present vs background",
+      "evaluation_design": "Two-fold background-session-held-out evaluation",
+      "total_unique_oof_samples": 9241,
+      "background_windows": 5000,
+      "target_present_observations": 4241,
+      "models": {
+        "A": {
+          "accuracy": 0.9414565523211773,
+          "balanced_accuracy": 0.9427859702900259,
+          "macro_f1": 0.9412361046585263,
+          "macro_precision": 0.9405166396284024,
+          "background_recall": 0.9266,
+          "target_recall": 0.9589719405800519
+        },
+        "B": {
+          "accuracy": 0.8101937019803052,
+          "balanced_accuracy": 0.8225060834708795,
+          "macro_f1": 0.8088977251719467,
+          "macro_precision": 0.8411136267051338,
+          "background_recall": 0.6726,
+          "target_recall": 0.972412166941759
+        },
+        "C": {
+          "accuracy": 0.8870252137214587,
+          "balanced_accuracy": 0.8929870785192171,
+          "macro_f1": 0.887025148896848,
+          "macro_precision": 0.8928895463064486,
+          "background_recall": 0.8204,
+          "target_recall": 0.9655741570384343
+        }
+      },
+      "winner": "Model A",
+      "winner_macro_f1": 0.9412361046585263,
+      "scientific_status": "NOISE_TARGET_TWO_FOLD_OOF_FINALIZED",
+      "reporting_notes": [
+        "Pooled out-of-fold metrics are the primary overall performance summary for this two-fold protocol.",
+        "Per-fold results must also be retained because only two independent background sessions were available.",
+        "Large between-fold variation is evidence of background-session/domain sensitivity and must not be hidden by pooled averages.",
+        "No further tuning of Models A, B or C may use either Fold 1 or Fold 2 outer-test results.",
+        "These results demonstrate performance on the available Noise Target dataset under this protocol; they do not by themselves establish generalization to arbitrary real-world ocean environments."
+      ]
+    },
+    "DeepShip": {
+      "project_family": "DeepShip",
+      "task": "Four-class vessel classification: Cargo, Passengership, Tanker, Tug",
+      "evaluation_design": "3-fold parent-source-held-out outer OOF evaluation over 1118 five-second observations from 63 independent parent recordings.",
+      "independent_parent_sources": 63,
+      "classes": [
+        "Cargo",
+        "Passengership",
+        "Tanker",
+        "Tug"
+      ],
+      "models": {
+        "A": {
+          "model_name": "MFCC + RBF-SVM",
+          "segment_accuracy": 0.4096601073345259,
+          "segment_balanced_accuracy": 0.3848774478736156,
+          "segment_macro_f1": 0.3847402686230661,
+          "segment_macro_precision": 0.3864038134953578,
+          "source_accuracy": 0.3968253968253968,
+          "source_balanced_accuracy": 0.3976190476190476,
+          "source_macro_f1": 0.3601693628009417,
+          "source_macro_precision": 0.3742451690821256
+        },
+        "B": {
+          "model_name": "LogMel CNN",
+          "segment_accuracy": 0.3005366726296959,
+          "segment_balanced_accuracy": 0.2985472313472687,
+          "segment_macro_f1": 0.2749673853597908,
+          "segment_macro_precision": 0.2768398268398268,
+          "source_accuracy": 0.2857142857142857,
+          "source_balanced_accuracy": 0.3148809523809524,
+          "source_macro_f1": 0.2564425770308123,
+          "source_macro_precision": 0.3332509881422924
+        },
+        "C": {
+          "model_name": "LogMel CNN + Acoustic Fusion",
+          "segment_accuracy": 0.334525939177102,
+          "segment_balanced_accuracy": 0.3351743536307033,
+          "segment_macro_f1": 0.349817194793217,
+          "segment_macro_precision": 0.3778775561477653,
+          "source_accuracy": 0.3809523809523809,
+          "source_balanced_accuracy": 0.3648809523809523,
+          "source_macro_f1": 0.3545378151260504,
+          "source_macro_precision": 0.3662878787878788
+        }
+      },
+      "primary_metric": "Pooled outer-OOF segment-level Macro-F1",
+      "secondary_metric": "Majority-vote source-level Macro-F1",
+      "winner": "Model A - MFCC + RBF-SVM",
+      "winner_segment_macro_f1": 0.3847402686230661,
+      "winner_source_macro_f1": 0.3601693628009417,
+      "scientific_interpretation": [
+        "Model A provides the strongest overall held-out performance.",
+        "Model C improves substantially over Model B, indicating complementary value from engineered spectral, LOFAR-style and DEMON-style features.",
+        "Model C does not outperform Model A on the predefined primary segment-level Macro-F1.",
+        "Large fold-to-fold changes indicate strong source/domain variability.",
+        "Tug conclusions are especially uncertain because only three independent Tug parent recordings exist."
+      ],
+      "scientific_status": "COMPLETE_AND_FROZEN",
+      "post_test_retuning": true
+    },
+    "ShipsEar": {
+      "project_family": "ShipsEar",
+      "task": "Five-class acoustic characterization plus restricted three-class exploratory classification",
+      "available_segments": 2223,
+      "natural_provenance_groups": 12,
+      "five_class_acoustic_characterization": "COMPLETE",
+      "full_five_class_source_heldout_ml": "NOT_SCIENTIFICALLY_SUPPORTED",
+      "full_five_class_ml_reason": "class_2 and class_4 each have only one natural provenance group.",
+      "restricted_ml": {
+        "classes": [
+          "class_0",
+          "class_1",
+          "class_3"
+        ],
+        "segments": 1156,
+        "natural_groups": 10,
+        "outer_folds": 2,
+        "model": "20 acoustic features + fixed RBF-SVM",
+        "segment_macro_f1": 0.5003273177867933,
+        "group_macro_f1": 0.5833333333333334,
+        "post_test_retuning": false
+      },
+      "scientific_interpretation": [
+        "All five local ShipsEar classes remain included in descriptive acoustic characterization.",
+        "Restricted three-class ML is exploratory and must not be described as a full ShipsEar classifier.",
+        "Natural provenance groups, rather than individual five-second files, are the relevant independence units.",
+        "Generalization evidence is limited by the small number of independent provenance groups."
+      ],
+      "scientific_status": "SHIPSEAR_COMPLETE_AND_FROZEN"
+    },
+    "DS3500": {
+      "project_family": "DS3500",
+      "task": "Paired-dataset provenance and audio-relationship investigation",
+      "paired_dataset": "ShipsEar",
+      "paired_records": 2223,
+      "scientific_status": "RESEARCH_ONLY_PAIRED_WITH_SHIPSEAR",
+      "independent_dataset_claim_allowed": false,
+      "independent_ml_benchmark_allowed": false,
+      "relationship_evidence": {
+        "one_to_one_pairing": true,
+        "same_filename_all_pairs": true,
+        "same_class_all_pairs": true,
+        "same_group_all_pairs": true,
+        "same_original_split_all_pairs": true,
+        "same_sample_rate_pairs": 2223,
+        "same_sample_length_pairs": 2223,
+        "exact_file_hash_matches": 0,
+        "exact_pcm_matches": 0,
+        "median_absolute_waveform_correlation": 0.5601745546233668,
+        "median_gain_aligned_nrmse": 0.8290802832276393,
+        "median_magnitude_spectrum_cosine_similarity": 0.8974873955554312
+      },
+      "modeling_decision": "Do not run DS3500 as an independent classification benchmark.",
+      "interpretation": [
+        "DS3500 is a one-to-one paired counterpart of ShipsEar in the available project data.",
+        "DS3500 is not an exact byte-for-byte or PCM-identical duplicate of ShipsEar.",
+        "The exact preprocessing or transformation linking the paired audio files is not established by the available evidence.",
+        "DS3500 must not be counted as an independent second dataset for model-generalization claims.",
+        "DS3500 is retained for research, comparison, paired-analysis, and provenance investigation."
+      ]
+    }
+  },
+  "global_scientific_rules": [
+    "Do not use frozen final-test or outer-test results for post-test model tuning.",
+    "Preserve source, session or provenance-group independence when reporting generalization.",
+    "ShipsEar restricted three-class ML must not be described as a full five-class classifier.",
+    "DS3500 must not be counted as an independent second validation dataset.",
+    "Mono recordings do not support claims of true spatial beamforming or direction-of-arrival estimation."
+  ],
+  "input_file_hashes": {
+    "speedboat_summary": "fdb847178bd6d3ee853dcd6819e8b320390d9b29d90981eb1f62a5d2d9394ad5",
+    "uuv_summary": "05570a0262d54c7379924ef1ae4f7013ce4d5e885e5830a99a2058b5492eaca8",
+    "noise_target_lock": "b94fbb6709f3d49c2937d883ce0c5b2a11386a78d557ec85a8becde8912a9365",
+    "deepship_summary": "2768a0d9ccf2b8b2832e624450d67b844d995f532eff00d0fcd969579ea437d3",
+    "deepship_comparison": "eac338aa7a8a5f5b65336b29f69ecb70a592f4162a8cbca1260a4506d5db4224",
+    "shipsear_final_status": "056ff149b2c5f23d28de4eda61875462af6d56b3bbefe9a5b4b4a71a632846dd",
+    "ds3500_final_status": "f35ea0d05100a81c5a4f8987a53a4df149bcb11bd5ca709053d93391e3dd0215",
+    "master_project_status": "cb5281c4241ff5668ac26648b1e4423022a9e71f796cfcfb4ac3794222720cda"
+  },
+  "master_project_status": "EXPERIMENTAL_RESULTS_COMPLETE_READY_FOR_CONSOLIDATION"
+}
